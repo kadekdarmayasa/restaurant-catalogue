@@ -1,0 +1,76 @@
+.hero {
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: 0.2em;
+
+  &__inner {
+    position: relative;
+    height: 500px;
+    margin: 1.5rem auto 0;
+    overflow: hidden;
+    text-align: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgba($color: #000000, $alpha: 0.6);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    z-index: 2;
+    padding: 0 0.5em;
+    transform: translateY(50%);
+  }
+
+  &__headline {
+    line-height: 1.5;
+    font-weight: 800;
+    color: $white;
+    margin: auto;
+    max-width: 700px;
+    font-size: calc($heading-1 - 0.2rem);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+
+    span {
+      color: $vivid-red-tangelo;
+    }
+  }
+
+  &__cta {
+    height: 56px;
+    width: 200px;
+    border: 0;
+    border-radius: 50px;
+    margin-top: 1rem;
+    font-family: inherit;
+    font-size: $body-2;
+    font-weight: 400;
+    color: white;
+    background-color: $vivid-red-tangelo;
+    filter: drop-shadow(0px 10px 5px rgba(217, 93, 32, 0.25));
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      filter: drop-shadow(0px 10px 10px rgba(217, 93, 32, 0.25));
+      transform: scale(1.02);
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

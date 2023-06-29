@@ -1,0 +1,22 @@
+.breadcrumb {
+  width: 90%;
+  margin: 1rem auto;
+  font-size: $body-2;
+
+  a {
+    color: $warm-granite;
+    text-decoration: none;
+    display: inline-block;
+    height: 44px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $vivid-red-tangelo;
+      text-decoration: underline;
+    }
+  }
+
+  span {
+    color: $venous-blood-red;
+  }
+}

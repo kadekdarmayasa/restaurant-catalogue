@@ -1,0 +1,23 @@
+.stars {
+  position: relative;
+  display: inline-flex;
+  min-width: 200px;
+}
+
+.star-item {
+  -webkit-mask: url('../public/images/star.svg') no-repeat center left;
+  mask: url('../public/images/star.svg') center left no-repeat;
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+
+  &.placeholder {
+    background-color: $rock-candy;
+    z-index: 1;
+  }
+
+  &:not(.placeholder) {
+    background-color: $honey-carrot-cake;
+    z-index: 2;
+  }
+}

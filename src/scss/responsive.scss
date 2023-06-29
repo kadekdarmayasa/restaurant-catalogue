@@ -1,0 +1,166 @@
+@media screen and (min-width: 670px) {
+  .app-bar {
+    &__menu {
+      button {
+        display: none;
+      }
+    }
+
+    &__navigation {
+      flex-direction: row;
+      height: auto;
+      width: auto;
+      border-bottom: 0;
+      position: static;
+      transform: scaleY(1);
+      opacity: 1;
+
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      li {
+        width: auto;
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+          margin-right: 2em;
+        }
+      }
+
+      a {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .restaurant-catalogues {
+    &__header {
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: $heading-2;
+
+        &::after {
+          width: 320px;
+        }
+      }
+    }
+
+    &__content {
+      column-gap: 30px;
+    }
+  }
+
+  .not-found,
+  .empty-favorite {
+    img {
+      width: 80%;
+    }
+  }
+
+  .catalogue-item {
+    grid-column-end: span 6;
+
+    &__title {
+      h3 {
+        font-size: $heading-3;
+      }
+    }
+  }
+
+  .restaurant-detail {
+    &__content {
+      margin: auto;
+      width: 90%;
+    }
+
+    &__menu {
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (min-width: 945px) {
+  .restaurant-catalogues__header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+
+    &.column {
+      flex-direction: column;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      margin-top: 0;
+      flex: 1;
+    }
+
+    p {
+      flex: 1.5;
+    }
+  }
+
+  .not-found,
+  .empty-favorite {
+    img {
+      width: 50%;
+    }
+  }
+
+  .restaurant-detail {
+    &__image {
+      height: 700px;
+    }
+
+    &__testimony {
+      .testimony-item {
+        grid-column-end: span 6;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .restaurant-catalogues__content {
+    .catalogue-item {
+      grid-column-end: span 4;
+    }
+  }
+
+  .restaurant-detail__testimony {
+    .testimony-item {
+      grid-column-end: span 6;
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .hero__inner {
+    border-radius: 10px;
+  }
+
+  #mainContent > * {
+    width: 100%;
+  }
+
+  .breadcrumb {
+    width: 100%;
+  }
+
+  .restaurant-detail__testimony {
+    .testimony-item {
+      grid-column-end: span 4;
+    }
+  }
+}
