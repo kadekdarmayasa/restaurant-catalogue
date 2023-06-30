@@ -1,7 +1,7 @@
 import NavItemInitiator from '../../utils/nav-item-initiator';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 import {
-  createCatalogueItemTemplate,
+  createRestaurantItemTemplate,
   createEmptyStateTemplate,
 } from '../templates/template-creator';
 
@@ -32,7 +32,7 @@ const Favorites = {
     }
 
     restaurants.forEach((restaurant) => {
-      restaurantCataloguesContent.innerHTML += createCatalogueItemTemplate(restaurant);
+      restaurantCataloguesContent.innerHTML += createRestaurantItemTemplate(restaurant);
     });
   },
 };

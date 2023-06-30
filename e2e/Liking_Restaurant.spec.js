@@ -1,5 +1,7 @@
 const assert = require('assert');
 
+const WAITING_TIME = 5;
+
 Feature('Liking Restaurant');
 
 Before(({ I }) => {
@@ -16,26 +18,19 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.amOnPage('/');
 
-  I.waitForElement('.catalogue-item__title a', 5);
-  I.seeElement('.catalogue-item__title a');
+  I.waitForVisible('.restaurant-item__title a', WAITING_TIME);
+  I.seeElement('.restaurant-item__title a');
 
-  const firstRestaurant = locate('.catalogue-item__title a').first();
+  const firstRestaurant = locate('.restaurant-item__title a').first();
   const firstRestaurantTitle = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
 
-  I.waitForElement('#activeBreadcrumb', 5);
-  I.seeElement('#activeBreadcrumb');
+  I.waitForVisible('#activeBreadcrumb', WAITING_TIME);
+  I.waitForVisible('#restaurantName', WAITING_TIME);
+  I.waitForVisible('#restaurantAddress', WAITING_TIME);
+  I.waitForVisible('#restaurantImage', WAITING_TIME);
+  I.waitForVisible('#optionButton', WAITING_TIME);
 
-  I.waitForElement('#restaurantName', 5);
-  I.seeElement('#restaurantName');
-
-  I.waitForElement('#restaurantAddress', 5);
-  I.seeElement('#restaurantAddress');
-
-  I.waitForElement('#restaurantImage', 5);
-  I.seeElement('#restaurantImage');
-
-  I.waitForElement('#optionButton', 5);
   I.seeElement('#optionButton');
   I.click('#optionButton');
 
@@ -43,8 +38,10 @@ Scenario('liking one restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorites');
-  I.seeElement('.catalogue-item');
-  const likedRestaurantTitle = await I.grabTextFrom('.catalogue-item__title a');
+
+  I.waitForVisible('.restaurant-item__title a');
+  I.seeElement('.restaurant-item__title a');
+  const likedRestaurantTitle = await I.grabTextFrom('.restaurant-item__title a');
 
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
 });

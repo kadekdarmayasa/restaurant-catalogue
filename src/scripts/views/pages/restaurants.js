@@ -1,8 +1,8 @@
 import RestaurantCatalogueSource from '../../data/restaurant-catalogue-source';
 import { NavItemInitiator, SearchBarInitiator } from '../../utils';
 import {
-  createCatalogueItemTemplate,
-  createCatalogueItemSkeletonTemplate,
+  createRestaurantItemTemplate,
+  createRestaurantItemSkeletonTemplate,
 } from '../templates/template-creator';
 
 const Restaurants = {
@@ -42,13 +42,13 @@ const Restaurants = {
     });
 
     const restaurantCataloguesContent = document.querySelector('#restaurantCataloguesContent');
-    restaurantCataloguesContent.innerHTML = createCatalogueItemSkeletonTemplate().repeat(6);
+    restaurantCataloguesContent.innerHTML = createRestaurantItemSkeletonTemplate().repeat(6);
 
     const restaurants = await RestaurantCatalogueSource.listRestaurant();
     restaurantCataloguesContent.innerHTML = '';
 
     restaurants.forEach((restaurant) => {
-      restaurantCataloguesContent.innerHTML += createCatalogueItemTemplate(restaurant);
+      restaurantCataloguesContent.innerHTML += createRestaurantItemTemplate(restaurant);
     });
 
     SearchBarInitiator.init({

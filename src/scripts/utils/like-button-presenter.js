@@ -35,7 +35,7 @@ const LikeButtonPresenter = {
   renderLiked() {
     this.likeButtonContainer.innerHTML = createUnlikeRestaurantButtonTemplate();
 
-    const likeButton = document.getElementById('likeButton');
+    const likeButton = document.getElementById('unlikeButton');
     likeButton.addEventListener('click', async () => {
       await this.favoriteRestaurant.deleteRestaurant(this.restaurant.id);
       this.renderButton();
