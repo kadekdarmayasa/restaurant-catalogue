@@ -1,7 +1,7 @@
 import RestaurantCatalogueSource from '../../data/restaurant-catalogue-source';
 import {
-  createCatalogueItemTemplate,
-  createCatalogueItemSkeletonTemplate,
+  createRestaurantItemTemplate,
+  createRestaurantItemSkeletonTemplate,
 } from '../templates/template-creator';
 import NavItemInitiator from '../../utils/nav-item-initiator';
 
@@ -58,14 +58,14 @@ const Home = {
     });
 
     const restaurantCataloguesContent = document.getElementById('restaurantCataloguesContent');
-    restaurantCataloguesContent.innerHTML = createCatalogueItemSkeletonTemplate().repeat(6);
+    restaurantCataloguesContent.innerHTML = createRestaurantItemSkeletonTemplate().repeat(6);
 
     const restaurants = await RestaurantCatalogueSource.listRestaurant();
     restaurants.length = 6;
     restaurantCataloguesContent.innerHTML = '';
 
     restaurants.forEach((restaurant) => {
-      restaurantCataloguesContent.innerHTML += createCatalogueItemTemplate(restaurant);
+      restaurantCataloguesContent.innerHTML += createRestaurantItemTemplate(restaurant);
     });
   },
 };

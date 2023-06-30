@@ -64,7 +64,7 @@
     }
   }
 
-  .catalogue-item {
+  .restaurant-item {
     grid-column-end: span 6;
 
     &__title {
@@ -133,7 +133,7 @@
 
 @media screen and (min-width: 1020px) {
   .restaurant-catalogues__content {
-    .catalogue-item {
+    .restaurant-item {
       grid-column-end: span 4;
     }
   }

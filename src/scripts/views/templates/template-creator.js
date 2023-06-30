@@ -1,9 +1,9 @@
 import RESTAURANT_API_ENDPOINT from '../../globals/api-endpoint';
 import '../components/star';
 
-const createCatalogueItemTemplate = (restaurant) => /* html */ `
-  <article class="catalogue-item">
-    <div class="catalogue-item__thumbnail">
+const createRestaurantItemTemplate = (restaurant) => /* html */ `
+  <article class="restaurant-item">
+    <div class="restaurant-item__thumbnail">
       <img 
         src=${RESTAURANT_API_ENDPOINT.IMAGE('small', restaurant.pictureId)} 
         alt=${restaurant.name}
@@ -11,40 +11,40 @@ const createCatalogueItemTemplate = (restaurant) => /* html */ `
       >
     </div>
 
-    <div class="catalogue-item__title">
+    <div class="restaurant-item__title">
       <a href="#/detail/${restaurant.id}">
         <h3>${restaurant.name}</h3>
       </a>
       <small>${restaurant.city}</small>
     </div>
 
-    <div class="catalogue-item__description">
+    <div class="restaurant-item__description">
       <p>${restaurant.description}</p>
     </div>
 
-    <div class="catalogue-item__rate">
+    <div class="restaurant-item__rate">
       <star-items value="${restaurant.rating}" height="40" width="40"></star-items>
       <span>(${restaurant.rating})</span>
     </div>
   </article>
 `;
 
-const createCatalogueItemSkeletonTemplate = () => /* html */ `
-  <article class="catalogue-item">
-    <div class="catalogue-item__thumbnail">
+const createRestaurantItemSkeletonTemplate = () => /* html */ `
+  <article class="restaurant-item">
+    <div class="restaurant-item__thumbnail">
       <div class="skeleton skeleton__image"></div>
     </div>
 
-    <div class="catalogue-item__title">
+    <div class="restaurant-item__title">
       <div class="skeleton skeleton__title"></div>
     </div>
 
-    <div class="catalogue-item__description">
+    <div class="restaurant-item__description">
       <div class="skeleton skeleton__description"></div>
       <div class="skeleton skeleton__description"></div>
     </div>
 
-    <div class="catalogue-item__rate">
+    <div class="restaurant-item__rate">
       <div class="skeleton skeleton__rate"></div>
     </div>
   </article>
@@ -97,15 +97,15 @@ const creaeteLikeRestaurantButtonTemplate = () => /* html */ `
 `;
 
 const createUnlikeRestaurantButtonTemplate = () => /* html */ `
-  <button aria-label="unlike this restaurant" id="likeButton" class="like" tabindex="-1">
+  <button aria-label="unlike this restaurant" id="unlikeButton" class="like" tabindex="-1">
     <i class="fa fa-heart" aria-hidden="true"></i>
     <span class="unlike">Unlike</span>
   </button>
 `;
 
 export {
-  createCatalogueItemTemplate,
-  createCatalogueItemSkeletonTemplate,
+  createRestaurantItemTemplate,
+  createRestaurantItemSkeletonTemplate,
   createTestimonyItemTemplate,
   createReviewFormTemplate,
   creaeteLikeRestaurantButtonTemplate,

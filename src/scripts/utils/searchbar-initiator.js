@@ -1,7 +1,7 @@
 import {
-  createCatalogueItemTemplate,
+  createRestaurantItemTemplate,
   createNotFoundTemplate,
-  createCatalogueItemSkeletonTemplate,
+  createRestaurantItemSkeletonTemplate,
 } from '../views/templates/template-creator';
 
 const SearchBarInitiator = {
@@ -20,7 +20,7 @@ const SearchBarInitiator = {
 
   async searchRestaurants(event, query) {
     event.preventDefault();
-    this.content.innerHTML = createCatalogueItemSkeletonTemplate().repeat(6);
+    this.content.innerHTML = createRestaurantItemSkeletonTemplate().repeat(6);
 
     if (query.value === '') {
       this.renderAllRestaurants();
@@ -36,7 +36,7 @@ const SearchBarInitiator = {
 
     const restaurants = await this.source.listRestaurant();
     restaurants.forEach((restaurant) => {
-      this.content.innerHTML += createCatalogueItemTemplate(restaurant);
+      this.content.innerHTML += createRestaurantItemTemplate(restaurant);
     });
   },
 
@@ -45,7 +45,7 @@ const SearchBarInitiator = {
 
     if (restaurants.length === 0) this.renderNotFound();
     restaurants.forEach((restaurant) => {
-      this.content.innerHTML += createCatalogueItemTemplate(restaurant);
+      this.content.innerHTML += createRestaurantItemTemplate(restaurant);
     });
   },
 
