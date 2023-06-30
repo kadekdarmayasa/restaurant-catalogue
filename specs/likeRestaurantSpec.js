@@ -13,13 +13,13 @@ describe('Like a Restaurant', () => {
   it('should show the like widget when the restaurant has not been liked before', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
-    expect(document.querySelector('[aria-label="like this restaurant"]')).toBeTruthy();
+    expect(document.getElementById('likeButton')).toBeTruthy();
   });
 
   it('should not show the unlike widget when the restaurant has not been liked before', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
-    expect(document.querySelector('[aria-label="unlike this restaurant"]')).toBeFalsy();
+    expect(document.getElementById('unlikeButton')).toBeFalsy();
   });
 
   it('should be able to like the restaurant', async () => {
