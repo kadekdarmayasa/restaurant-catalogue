@@ -51,10 +51,10 @@ const createRestaurantItemSkeletonTemplate = () => /* html */ `
 `;
 
 const createEmptyStateTemplate = () => /* html */ `
-  <div class="empty-favorite">
+  <div class="empty-state">
     <img src="/images/no-data.svg" alt="empty favorite restaurant" />
-    <h2 class="empty-favorite__headline">Seems you don't have any favorite restaurant</h2>
-    <a href="#/restaurants" class="empty-favorite__tagline">Add Now</a>
+    <h2 class="empty-state__headline">Seems you don't have any favorite restaurant</h2>
+    <a href="#/restaurants" class="empty-state__button">Add Now</a>
   </div>
   `;
 

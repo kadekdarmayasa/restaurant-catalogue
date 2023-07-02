@@ -59,7 +59,7 @@ const Detail = {
         <div class="actions" id="actions">
           <div class="action-button" id="likeButtonContainer"></div>
           <div class="action-button" id="addReviewButtonContainer">
-            <button id="addReviewButton" tabindex="-1">
+            <button type="button" id="addReviewButton" tabindex="-1">
               <i class="fa-regular fa-comment"></i>
               <span>Add Review</span>
             </button>
