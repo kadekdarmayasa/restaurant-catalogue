@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
+const ImageMinizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -18,6 +19,26 @@ module.exports = merge(common, {
           },
         ],
       },
+      {
+        test: /\.(jpe?g|png)$/i,
+        type: 'asset',
+      },
+    ],
+  },
+  optimization: {
+    minimizer: [
+      new ImageMinizerPlugin({
+        minimizer: {
+          implementation: ImageMinizerPlugin.squooshMinify,
+          options: {
+            encodeOptions: {
+              mozjpeg: {
+                quality: 50,
+              },
+            },
+          },
+        },
+      }),
     ],
   },
 });

@@ -5,8 +5,9 @@ const createRestaurantItemTemplate = (restaurant) => /* html */ `
   <article class="restaurant-item">
     <div class="restaurant-item__thumbnail">
       <img 
+        class="lazyload"
         src=${RESTAURANT_API_ENDPOINT.IMAGE('small', restaurant.pictureId)} 
-        alt=${restaurant.name}
+        alt="${restaurant.name}"
         crossorigin="anonymous"
       >
     </div>

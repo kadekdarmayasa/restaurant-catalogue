@@ -10,8 +10,12 @@ const Home = {
     return /* html */ `
       <section id="hero" class="hero">
         <div class="hero__inner">
-          <img class="hero__image" src="./images/heros/hero-image_1.jpg"
-          alt="The picture of Chief cook at kitchen">
+          <picture>
+            <source media="(min-width: 640px)" srcset="./images/heros/hero-image-large.jpg">
+            <source media="(min-width: 480px)" srcset="./images/heros/hero-image-medium.jpg">
+            <img class="hero__image" src="./images/heros/hero-image-small.jpg"
+            alt="The picture of Chief cook at kitchen">
+          </picture>
 
           <div class="hero__content">
             <h1 class="hero__headline">

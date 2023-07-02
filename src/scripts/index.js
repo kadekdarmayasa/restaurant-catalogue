@@ -1,4 +1,6 @@
 import 'regenerator-runtime';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../scss/index.scss';
 import App from './views/app';
 import swRegister from './utils/sw-register';
