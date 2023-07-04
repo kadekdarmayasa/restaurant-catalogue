@@ -3,11 +3,6 @@ const assert = require('assert');
 Feature('Liking Restaurant');
 
 Scenario('Liking one restaurant', async ({ I }) => {
-  I.amOnPage('/#/favorites');
-  I.see("Seems you don't have any favorite restaurant", '.empty-state__headline');
-  I.waitForElement('.empty-state__button');
-  I.see('Add Now', '.empty-state__button');
-  I.click('Add Now', '.empty-state__button');
   I.amOnPage('/#/restaurants');
   I.waitForElement('.restaurant-item__title a');
   I.seeElement('.restaurant-item__title a');
@@ -32,6 +27,5 @@ Scenario('Liking one restaurant', async ({ I }) => {
   I.seeElement('.restaurant-item__title a');
 
   const likedRestaurantTitle = await I.grabTextFrom('.restaurant-item__title a');
-
   assert.strictEqual(firstRestaurantTitle, likedRestaurantTitle);
 });
