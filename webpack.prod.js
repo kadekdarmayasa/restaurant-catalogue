@@ -2,17 +2,11 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 const ImageMinizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
-  plugins: [
-    new MiniCssExtractPlugin({
-      linkType: 'text/css',
-      filename: 'styles/[name].css',
-      chunkFilename: 'styles/[id].css',
-    }),
-  ],
   module: {
     rules: [
       {
@@ -23,11 +17,9 @@ module.exports = merge(common, {
           },
           {
             loader: 'css-loader',
-            options: { sourceMap: true },
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true },
           },
         ],
       },
@@ -86,4 +78,15 @@ module.exports = merge(common, {
       },
     },
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      linkType: 'text/css',
+      filename: 'styles/[name].css',
+      chunkFilename: 'styles/[id].css',
+    }),
+    new GenerateSW({
+      cacheId: 'restaurant-apps',
+      swDest: './sw.bundle.js',
+    }),
+  ],
 });

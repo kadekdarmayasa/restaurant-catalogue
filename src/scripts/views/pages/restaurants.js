@@ -24,7 +24,6 @@ const Restaurants = {
               id="query"
               aria-label="search input" 
               placeholder="Search restaurant..."
-              autofocus
             />
           </div>
 

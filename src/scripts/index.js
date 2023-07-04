@@ -17,7 +17,7 @@ window.addEventListener('hashchange', () => {
   window.scrollTo({ top: 0 });
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   app.renderPage();
   window.scrollTo({ top: 0 });
   swRegister();
