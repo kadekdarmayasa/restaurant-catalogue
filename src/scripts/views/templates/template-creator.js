@@ -1,5 +1,4 @@
 import RESTAURANT_API_ENDPOINT from '../../globals/api-endpoint';
-import '../components/star';
 
 const createRestaurantItemTemplate = (restaurant) => /* html */ `
   <article class="restaurant-item">

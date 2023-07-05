@@ -8,7 +8,6 @@ import {
   OptionButtonInitiator,
   ReviewButtonInitiator,
 } from '../../utils';
-import '../components/star';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
