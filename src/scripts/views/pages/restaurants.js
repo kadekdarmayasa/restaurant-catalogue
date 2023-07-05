@@ -35,6 +35,8 @@ const Restaurants = {
   },
 
   async afterRender() {
+    document.title = 'RestoUp | Restaurants';
+
     NavItemInitiator.setActiveNavItem({
       navItems: document.querySelectorAll('.app-bar__navigation a'),
       pathName: 'restaurants',

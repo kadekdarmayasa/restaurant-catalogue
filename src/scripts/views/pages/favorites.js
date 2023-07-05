@@ -18,6 +18,8 @@ const Favorites = {
   },
 
   async afterRender() {
+    document.title = 'RestoUp | Favorites';
+
     NavItemInitiator.setActiveNavItem({
       navItems: document.querySelectorAll('.app-bar__navigation a'),
       pathName: 'favorites',

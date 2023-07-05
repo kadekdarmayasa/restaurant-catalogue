@@ -46,6 +46,8 @@ const Home = {
   },
 
   async afterRender() {
+    document.title = 'RestoUp | Home';
+
     NavItemInitiator.setActiveNavItem({
       navItems: document.querySelectorAll('.app-bar__navigation a'),
       pathName: 'home',

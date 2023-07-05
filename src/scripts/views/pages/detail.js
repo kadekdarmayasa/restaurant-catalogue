@@ -88,6 +88,7 @@ const Detail = {
       return;
     }
 
+    document.title = `Restaurant ${restaurant.name}`;
     activeBreadcrumb.innerHTML = restaurant.name;
     this.renderRestaurantDetailHeader(restaurant);
     this.renderRestaurantDetailContent(restaurant);
