@@ -35,10 +35,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      {
-        test: /\.(jpe?g|png)$/i,
-        type: 'asset',
-      },
     ],
   },
   optimization: {
