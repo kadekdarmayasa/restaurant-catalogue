@@ -41,13 +41,9 @@ module.exports = merge(common, {
     minimizer: [
       new ImageMinizerPlugin({
         minimizer: {
-          implementation: ImageMinizerPlugin.squooshMinify,
+          implementation: ImageMinizerPlugin.imageminMinify,
           options: {
-            encodeOptions: {
-              mozjpeg: {
-                quality: 50,
-              },
-            },
+            plugins: [['mozjpeg', { progressive: true, quality: 50 }]],
           },
         },
       }),
