@@ -14,7 +14,7 @@ const SearchBarInitiator = {
     });
 
     query.addEventListener('keyup', (event) => {
-      if (event.keyCode === 13) this.searchRestaurants(event, query);
+      this.searchRestaurants(event, query);
     });
   },
 

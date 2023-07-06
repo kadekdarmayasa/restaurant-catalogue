@@ -17,7 +17,7 @@ const Detail = {
         <a href="#/restaurants">Restaurants</a> / <span id="activeBreadcrumb"></span> 
       </nav>  
 
-      <main class="main-content" id="mainContent"  tabindex="0">
+      <main id="mainContent"  tabindex="0">
         <section class="restaurant-detail">
           <div class="restaurant-detail__header">
             <h1 class="restaurant-detail__name" id="restaurantName"></h1>

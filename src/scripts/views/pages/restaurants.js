@@ -8,11 +8,12 @@ import {
 const Restaurants = {
   async render() {
     return /* html */ `
-      <main class="main" id="mainContent" tabindex="0">
-        <section class="restaurant-catalogues space-top" id="restaurantCatalogues">
-          <div class="restaurant-catalogues__header column">
+      <main id="mainContent" tabindex="0">
+        <section 
+          class="restaurant-catalogues restaurant-catalogues--space-top" id="restaurantCatalogues"
+        >
+          <div class="restaurant-catalogues__header  restaurant-catalogues__header--column">
             <h1>Search Restaurants and Add Them To Your Favorites</h1>
-            <p>Search quickly by restaurant name, category, or menu</p>
           </div>
 
           <div class="search-bar">
@@ -22,8 +23,9 @@ const Restaurants = {
             <input 
               type="search"
               id="query"
+              class="search-bar__input"
               aria-label="search input" 
-              placeholder="Search restaurant..."
+              placeholder="Search by restaurant name, category, or menu"
             />
           </div>
 
