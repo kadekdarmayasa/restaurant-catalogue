@@ -13,7 +13,7 @@ const createRestaurantItemTemplate = (restaurant) => /* html */ `
 
     <div class="restaurant-item__title">
       <a href="#/detail/${restaurant.id}">
-        <h3>${restaurant.name}</h3>
+        <h3 class="restaurant-item__name">${restaurant.name || '-'}</h3>
       </a>
       <small>${restaurant.city}</small>
     </div>

@@ -2,12 +2,8 @@ import RestaurantCatalogueSource from '../../data/restaurant-catalogue-source';
 import RESTAURANT_API_ENDPOINT from '../../globals/api-endpoint';
 import UrlParser from '../../routes/url-parser';
 import { createTestimonyItemTemplate } from '../templates/template-creator';
-import {
-  LikeButtonPresenter,
-  NavItemInitiator,
-  OptionButtonInitiator,
-  ReviewButtonInitiator,
-} from '../../utils';
+import LikeButtonPresenter from '../../presenters/like-button-presenter';
+import { NavItemInitiator, OptionButtonInitiator, ReviewButtonInitiator } from '../../utils';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
 
 const Detail = {
@@ -97,7 +93,7 @@ const Detail = {
       actionsButton: document.getElementById('actions'),
     });
 
-    LikeButtonPresenter.init({
+    await LikeButtonPresenter.init({
       likeButtonContainer: document.getElementById('likeButtonContainer'),
       favoriteRestaurant: FavoriteRestaurantIdb,
       restaurant: {

@@ -1,17 +1,22 @@
 import NavItemInitiator from '../../utils/nav-item-initiator';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import {
-  createRestaurantItemTemplate,
-  createEmptyStateTemplate,
-} from '../templates/template-creator';
+import FavoriteRestaruantSearchPresenter from '../../presenters/favorite-restaurant-search-presenter';
+import FavoriteRestaruantShowPresenter from '../../presenters/favorite-restaurant-show-presenter';
+import FavoriteRestaruantSearchView from './favorite-restaurants/favorite-restaurants-search-view';
+
+const view = new FavoriteRestaruantSearchView();
 
 const Favorites = {
   async render() {
     return /* html */ `
       <main id="mainContent" tabindex="0">
-        <section class="restaurant-catalogues restaurant-catalogues--space-top" id="restaurantCatalogues">
-          <div class="restaurant-catalogues__content" id="restaurantCataloguesContent">
+        <section 
+          class="restaurant-catalogues restaurant-catalogues--space-top" id="restaurantCatalogues"
+        >
+          <div class="restaurant-catalogues__header  restaurant-catalogues__header--column">
+            <h1>Search Your Favorite Restaurants</h1>
           </div>
+          ${view.getTemplate()}
         </section>
       </main>
     `;
@@ -25,16 +30,14 @@ const Favorites = {
       pathName: 'favorites',
     });
 
-    const restaurantCataloguesContent = document.querySelector('#restaurantCataloguesContent');
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    new FavoriteRestaruantSearchPresenter({
+      favoriteRestaurant: FavoriteRestaurantIdb,
+      view,
+    });
 
-    if (restaurants.length === 0) {
-      restaurantCataloguesContent.innerHTML = createEmptyStateTemplate();
-      return;
-    }
-
-    restaurants.forEach((restaurant) => {
-      restaurantCataloguesContent.innerHTML += createRestaurantItemTemplate(restaurant);
+    new FavoriteRestaruantShowPresenter({
+      favoriteRestaurant: FavoriteRestaurantIdb,
+      view,
     });
   },
 };
