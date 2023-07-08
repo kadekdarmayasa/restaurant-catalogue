@@ -54,7 +54,7 @@
 */
 
 .restaurant-catalogues {
-  &.space-top {
+  &.--space-top {
     margin-top: 3rem !important;
   }
 
@@ -90,7 +90,7 @@
       color: $warm-granite;
     }
 
-    &.column {
+    &.--column {
       p {
         text-align: center;
       }
@@ -127,7 +127,7 @@
       color: $warm-granite;
     }
 
-    input {
+    &__input {
       width: 92%;
       border-radius: 0 30px 30px 0;
       border: 0;

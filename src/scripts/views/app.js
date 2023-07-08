@@ -1,3 +1,4 @@
+import './components/Star';
 import { DrawerInitiator } from '../utils';
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';

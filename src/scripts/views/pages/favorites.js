@@ -8,8 +8,8 @@ import {
 const Favorites = {
   async render() {
     return /* html */ `
-      <main id="mainContent" class="main-content" tabindex="0">
-        <section class="restaurant-catalogues space-top" id="restaurantCatalogues">
+      <main id="mainContent" tabindex="0">
+        <section class="restaurant-catalogues restaurant-catalogues--space-top" id="restaurantCatalogues">
           <div class="restaurant-catalogues__content" id="restaurantCataloguesContent">
           </div>
         </section>
@@ -18,6 +18,8 @@ const Favorites = {
   },
 
   async afterRender() {
+    document.title = 'RestoUp | Favorites';
+
     NavItemInitiator.setActiveNavItem({
       navItems: document.querySelectorAll('.app-bar__navigation a'),
       pathName: 'favorites',

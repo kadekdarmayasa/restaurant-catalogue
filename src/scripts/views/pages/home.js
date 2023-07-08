@@ -9,7 +9,7 @@ const Home = {
   async render() {
     return /* html */ `
       <section id="hero" class="hero">
-        <div class="hero__inner">
+        <div class="hero__content">
           <picture>
             <source media="(min-width: 640px)" srcset="./images/heros/hero-image-large.jpg">
             <source media="(min-width: 480px)" srcset="./images/heros/hero-image-medium.jpg">
@@ -17,7 +17,7 @@ const Home = {
             alt="The picture of Chief cook at kitchen">
           </picture>
 
-          <div class="hero__content">
+          <div class="hero__description">
             <h1 class="hero__headline">
               Discover <span>Culinary Delights</span> That Elevate Your <span>Dining Experience</span>
             </h1>
@@ -26,7 +26,7 @@ const Home = {
         </div>
       </section>
 
-      <main id="mainContent" class="main-content" tabindex="0">
+      <main id="mainContent" tabindex="0">
         <section class="restaurant-catalogues" id="restaurantCatalogues">
           <div class="restaurant-catalogues__header">  
             <h2>Featured Catalogues</h2>
@@ -46,6 +46,8 @@ const Home = {
   },
 
   async afterRender() {
+    document.title = 'RestoUp | Home';
+
     NavItemInitiator.setActiveNavItem({
       navItems: document.querySelectorAll('.app-bar__navigation a'),
       pathName: 'home',
