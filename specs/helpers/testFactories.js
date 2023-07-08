@@ -1,4 +1,4 @@
-import LikeButtonPresenter from '../../src/scripts/utils/like-button-presenter';
+import LikeButtonPresenter from '../../src/scripts/presenters/like-button-presenter';
 import FavoriteRestaurantIdb from '../../src/scripts/data/favorite-restaurant-idb';
 
 const createLikeButtonPresenterWithRestaurant = async (restaurant) => {

@@ -14,7 +14,7 @@ const SearchBarInitiator = {
     });
 
     query.addEventListener('keyup', (event) => {
-      this.searchRestaurants(event, query);
+      if (event.key === 'Enter') this.searchRestaurants(event, query);
     });
   },
 
