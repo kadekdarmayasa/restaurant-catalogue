@@ -103,6 +103,59 @@ const createUnlikeRestaurantButtonTemplate = () => /* html */ `
   </button>
 `;
 
+const createRestaruantDetailTemplate = (restaurant) => /* html */ `
+  <div class="restaurant-detail__header">
+    <h1 class="restaurant-detail__name">${restaurant.name}</h1>
+    <p class="restaurant-detail__address">${restaurant.address}</p>
+    <div class="restaurant-detail__image">
+      <img 
+        src="${RESTAURANT_API_ENDPOINT.IMAGE('large', restaurant.pictureId)}" 
+        alt="${restaurant.name}" crossorigin="anonymous"
+       />
+    </div>
+    <div class="restaurant-detail__rate" aria-label="restaurant rating">
+      <star-items value="${restaurant.rating}" height="40" width="40"></star-items> 
+      (${restaurant.rating})
+    </div>
+  </div>
+  <div class="restaurant-detail__content">
+    <div class="restaurant-detail__categories">
+      <h2>Categories</h2>
+      <p>${restaurant.categories}</p>
+    </div>
+    <div class="restaurant-detail__description">
+      <p>${restaurant.description}</p>
+    </div>
+    <div class="restaurant-detail__menu">
+      <div class="food-menu">
+        <h2>Food Menus</h2>
+        <ul class="menu-list" id="foodMenuList">${restaurant.foods}</ul>
+      </div>
+      <div class="drink-menu">
+        <h2>Drink Menus</h2>
+        <ul class="menu-list" id="drinkMenuList">${restaurant.drinks}</ul>
+      </div>
+    </div>
+    <div class="restaurant-detail__testimony">
+      <h2>Customer Reviews</h2>
+      <div class="testimony-list" id="testimonyList">${restaurant.customerReviews}</div>
+    </div>
+  </div>
+`;
+
+const createRestaruantDetailSkeletonTemplate = () => /* html */ `
+  <div class="restaurant-detail__header">
+    <div class="restaurant-detail__name--skeleton"></div>
+    <div class="restaurant-detail__address--skeleton"></div>
+    <div class="restaurant-detail__image--skeleton"></div>
+  </div>
+  <div class="restaurant-detail__content">
+    <div class="restaurant-detail__categories--skeleton">
+    </div>
+    ${'<div class="restaurant-detail__description--skeleton"></div>'.repeat(5)}
+  </div>
+`;
+
 export {
   createRestaurantItemTemplate,
   createRestaurantItemSkeletonTemplate,
@@ -112,4 +165,6 @@ export {
   createUnlikeRestaurantButtonTemplate,
   createNotFoundTemplate,
   createEmptyStateTemplate,
+  createRestaruantDetailTemplate,
+  createRestaruantDetailSkeletonTemplate,
 };

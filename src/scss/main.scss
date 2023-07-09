@@ -281,12 +281,30 @@
     font-size: calc($heading-1 - 0.2rem);
     color: $vivid-red-tangelo;
     margin-bottom: 1rem;
+
+    &--skeleton {
+      max-width: 360px;
+      min-width: 200px;
+      height: 1.5rem;
+      border-radius: 10px;
+      margin: auto;
+      animation: skeleton-loading 1s linear infinite alternate;
+    }
   }
 
   &__address {
     font-size: $body-2;
     color: $warm-granite;
     margin-bottom: 1.5rem;
+
+    &--skeleton {
+      max-width: 300px;
+      min-width: 100px;
+      height: 1rem;
+      border-radius: 10px;
+      margin: 1rem auto 1.5rem;
+      animation: skeleton-loading 1s linear infinite alternate;
+    }
   }
 
   &__image {
@@ -312,6 +330,13 @@
       width: 100%;
       object-fit: cover;
       object-position: center;
+    }
+
+    &--skeleton {
+      height: 300px;
+      width: 100%;
+      border-radius: 20px;
+      animation: skeleton-loading 1s linear infinite alternate;
     }
   }
 
@@ -348,6 +373,15 @@
       line-height: 2;
       color: $warm-granite;
     }
+
+    &--skeleton {
+      max-width: 360px;
+      min-width: 200px;
+      height: 1.5rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      animation: skeleton-loading 1s linear infinite alternate;
+    }
   }
 
   &__description {
@@ -358,6 +392,14 @@
       font-weight: 500;
       line-height: 2;
       color: $venous-blood-red;
+    }
+
+    &--skeleton {
+      max-width: 100%;
+      height: 1.2rem;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+      animation: skeleton-loading 1s linear infinite alternate;
     }
   }
 

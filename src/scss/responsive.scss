@@ -121,6 +121,10 @@
   .restaurant-detail {
     &__image {
       height: 700px;
+
+      &--skeleton {
+        height: 700px;
+      }
     }
 
     &__testimony {
