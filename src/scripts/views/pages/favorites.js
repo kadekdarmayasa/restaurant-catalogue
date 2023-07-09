@@ -14,7 +14,7 @@ const Favorites = {
           class="restaurant-catalogues restaurant-catalogues--space-top" id="restaurantCatalogues"
         >
           <div class="restaurant-catalogues__header  restaurant-catalogues__header--column">
-            <h1>Search Your Favorite Restaurants</h1>
+            <h1>Search Restaurants</h1>
           </div>
           ${view.getTemplate()}
         </section>

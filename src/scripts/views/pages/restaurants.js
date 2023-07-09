@@ -13,7 +13,7 @@ const Restaurants = {
           class="restaurant-catalogues restaurant-catalogues--space-top" id="restaurantCatalogues"
         >
           <div class="restaurant-catalogues__header  restaurant-catalogues__header--column">
-            <h1>Search Restaurants and Add Them To Your Favorites</h1>
+            <h1>Search Restaurants</h1>
           </div>
 
           <div class="search-bar">
@@ -25,7 +25,7 @@ const Restaurants = {
               id="query"
               class="search-bar__input"
               aria-label="search input" 
-              placeholder="Search by restaurant name, category, or menu"
+              placeholder="search by name or menu..."
             />
           </div>
 

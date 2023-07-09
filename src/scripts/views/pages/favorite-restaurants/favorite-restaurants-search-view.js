@@ -16,7 +16,7 @@ class FavoriteRestaruantSearchView {
           id="query"
           class="search-bar__input"
           aria-label="search input" 
-          placeholder="Search by restaurant name"
+          placeholder="Search by name..."
         />
       </div>
       <div class="restaurant-catalogues__content" id="restaurantCataloguesContent">
