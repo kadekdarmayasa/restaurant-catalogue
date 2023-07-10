@@ -17,7 +17,9 @@ const Detail = {
       </nav>  
 
       <main id="mainContent" tabindex="0">
-        <section class="restaurant-detail" id="restaurantDetail"></section>
+        <section class="restaurant-detail" id="restaurantDetail">
+          ${createRestaruantDetailSkeletonTemplate()}
+        </section>
       </main>
 
       <div class="action-button-container">
@@ -39,8 +41,10 @@ const Detail = {
   },
 
   async afterRender() {
+    const { id: restaurantId } = UrlParser.parseActiveUrlWithoutCombiner();
     const { restaurant } = await RestaurantCatalogueSource.detailRestaurant(restaurantId);
-    if (typeof restaurant === 'undefined') {
+
+    if (restaurant === undefined) {
       window.location.href = '#/restaurants';
       return;
     }
@@ -51,11 +55,7 @@ const Detail = {
     });
 
     const activeBreadcrumb = document.getElementById('activeBreadcrumb');
-    const restaurantDetail = document.getElementById('restaurantDetail');
-    const { id: restaurantId } = UrlParser.parseActiveUrlWithoutCombiner();
-
     document.title = `Restaurant ${restaurant.name}`;
-    restaurantDetail.innerHTML = createRestaruantDetailSkeletonTemplate();
     activeBreadcrumb.innerHTML = `/ ${restaurant.name}`;
     this.renderRestaurantDetailContent(restaurant);
 
