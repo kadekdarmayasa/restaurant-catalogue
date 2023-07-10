@@ -59,6 +59,11 @@ const Detail = {
     activeBreadcrumb.innerHTML = `/ ${restaurant.name}`;
     this.renderRestaurantDetailContent(restaurant);
 
+    ReviewButtonInitiator.init({
+      reviewButton: document.getElementById('addReviewButton'),
+      restaurantId,
+    });
+
     OptionButtonInitiator.init({
       optionButton: document.getElementById('optionButton'),
       actionsButton: document.getElementById('actions'),
@@ -74,12 +79,9 @@ const Detail = {
         pictureId: restaurant.pictureId,
         rating: restaurant.rating,
         city: restaurant.city,
+        menus: [...restaurant.menus.foods, ...restaurant.menus.drinks],
+        categories: restaurant.categories,
       },
-    });
-
-    ReviewButtonInitiator.init({
-      reviewButton: document.getElementById('addReviewButton'),
-      restaurantId,
     });
   },
 

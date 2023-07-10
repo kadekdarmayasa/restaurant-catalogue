@@ -156,6 +156,21 @@ const createRestaruantDetailSkeletonTemplate = () => /* html */ `
   </div>
 `;
 
+const searchBarTemplate = () => /* html */ `
+  <div class="search-bar">
+    <button id="searchButton" aria-label="search button" class="search-bar__button">
+      <i class="fa-solid fa-search"></i>
+    </button>
+    <input 
+      type="search"
+      id="query"
+      class="search-bar__input"
+      aria-label="search input" 
+      placeholder="E.g. Kafe Kita"
+    />
+  </div>
+`;
+
 export {
   createRestaurantItemTemplate,
   createRestaurantItemSkeletonTemplate,
@@ -167,4 +182,5 @@ export {
   createEmptyStateTemplate,
   createRestaruantDetailTemplate,
   createRestaruantDetailSkeletonTemplate,
+  searchBarTemplate,
 };

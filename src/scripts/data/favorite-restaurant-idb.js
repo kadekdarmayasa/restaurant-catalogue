@@ -30,13 +30,28 @@ const FavoriteRestaurantIdb = {
 
   async searchRestaurants(query) {
     return (await this.getAllRestaurants()).filter((restaurant) => {
-      const loweredCaseRestaurantTitle = (restaurant.name || '-').toLowerCase();
-      const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
+      const jammedQuery = query.replace(/\s/g, '').toLowerCase();
 
-      const loweredCaseQuery = query.toLowerCase();
-      const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
+      const restaurantName = restaurant.name || '-';
+      const jammedRestaurantName = restaurantName.replace(/\s/g, '').toLowerCase();
 
-      return jammedRestaurantTitle.indexOf(jammedQuery) !== -1;
+      const restaurantCategories = restaurant.categories || [];
+      const jammedRestaurantCategories = restaurantCategories
+        .reduce((carry, category) => carry.concat(category.name), '')
+        .toLowerCase()
+        .replace(/\s/g, '');
+
+      const restaurantMenus = restaurant.menus || [];
+      const jammedRestaurantMenus = restaurantMenus
+        .reduce((carry, menu) => carry.concat(menu.name), '')
+        .toLowerCase()
+        .replace(/\s/g, '');
+
+      return (
+        jammedRestaurantName.indexOf(jammedQuery) !== -1 ||
+        jammedRestaurantCategories.indexOf(jammedQuery) !== -1 ||
+        jammedRestaurantMenus.indexOf(jammedQuery) !== -1
+      );
     });
   },
 };

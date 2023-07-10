@@ -10,12 +10,14 @@ const ReviewButtonInitiator = {
       const formValues = await this.showReviewForm();
       if (formValues === undefined) return;
       if (formValues.name === '' || formValues.review === '') {
-        this.showErrorAlert('Please fill in all fields!');
+        this.showAlert({ type: 'error', message: 'Please fill all fields' });
         return;
       }
 
       const response = await this.postReview({ restaurantId, ...formValues });
-      response.error ? this.showErrorAlert(response.message) : this.showSuccessAlert();
+      response.error
+        ? this.showAlert({ type: 'error', message: response.message })
+        : this.showAlert({ type: 'success', message: 'Your review has been submitted!' });
     });
   },
 
@@ -47,25 +49,9 @@ const ReviewButtonInitiator = {
     return response;
   },
 
-  showSuccessAlert() {
+  showAlert({ type, message }) {
     Swal.fire({
-      icon: 'success',
-      title: 'Your review has been submitted!',
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer);
-        toast.addEventListener('mouseleave', Swal.resumeTimer);
-      },
-    });
-  },
-
-  showErrorAlert(message) {
-    Swal.fire({
-      icon: 'error',
+      icon: type,
       title: message,
       toast: true,
       position: 'top-end',

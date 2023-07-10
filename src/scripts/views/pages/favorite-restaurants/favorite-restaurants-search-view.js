@@ -2,25 +2,14 @@ import {
   createNotFoundTemplate,
   createEmptyStateTemplate,
   createRestaurantItemTemplate,
+  searchBarTemplate,
 } from '../../templates/template-creator';
 
 class FavoriteRestaruantSearchView {
   getTemplate() {
     return `
-      <div class="search-bar">
-        <button id="searchButton" aria-label="search button" class="search-bar__button">
-          <i class="fa-solid fa-search"></i>
-        </button>
-        <input 
-          type="search"
-          id="query"
-          class="search-bar__input"
-          aria-label="search input" 
-          placeholder="Search by name..."
-        />
-      </div>
-      <div class="restaurant-catalogues__content" id="restaurantCataloguesContent">
-      </div>
+      ${searchBarTemplate()}
+      <div class="restaurant-catalogues__content" id="restaurantCataloguesContent"></div>
     `;
   }
 
