@@ -182,7 +182,7 @@
 
     a {
       text-decoration: none;
-      color: $vivid-red-tangelo;
+      color: $honey-carrot-cake;
       transition: all 0.3s ease;
       height: auto;
       width: auto;
@@ -196,7 +196,7 @@
 
     h3 {
       font-size: calc($heading-3 - 0.2rem);
-      color: $vivid-red-tangelo;
+      color: $honey-carrot-cake;
       margin: 0;
       min-height: 44px;
       min-width: 44px;
@@ -279,7 +279,7 @@
 
   &__name {
     font-size: calc($heading-1 - 0.2rem);
-    color: $vivid-red-tangelo;
+    color: $venous-blood-red;
     margin-bottom: 1rem;
 
     &--skeleton {
@@ -363,8 +363,9 @@
   &__categories {
     h2 {
       font-size: calc($heading-2 - 0.2rem);
-      color: $vivid-red-tangelo;
+      color: $venous-blood-red;
       margin-bottom: 0.5rem;
+      font-weight: 600;
     }
 
     p {
@@ -404,28 +405,53 @@
   }
 
   &__menu {
+    margin-top: 3em;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    gap: 30px 50px;
 
-    .drink-menu,
-    .food-menu {
-      flex: 1;
+    .food-menu,
+    .drink-menu {
+      width: 100%;
+      padding: 2em 2em 3em;
+      border-radius: 10px;
+      background-color: $white;
+      box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
 
       h2 {
-        font-size: calc($heading-3 - 0.2rem);
-        color: $vivid-red-tangelo;
-        margin: 1.5rem 0 1.2rem;
+        font-size: $body-1;
+        font-weight: 500;
+        margin: 0 auto 2em;
+        text-transform: uppercase;
+        color: $venous-blood-red;
+        text-align: center;
+        background-color: rgba(255, 225, 207, 1);
+        max-width: 180px;
+        height: 40px;
+        border-radius: 5px;
+        line-height: 40px;
       }
 
+      &:hover {
+        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+        transform: scale(1.02);
+      }
+    }
+
+    .menu-list {
       li {
-        font-size: $body-2;
-        font-weight: 500;
-        color: $venous-blood-red;
-        transition: all 0.3s ease;
         list-style-position: inside;
+        margin-bottom: 0.5em;
+        font-size: $body-2;
+        color: $warm-granite;
 
         &::marker {
-          color: $vivid-red-tangelo;
+          content: '> ';
+          color: $honey-carrot-cake;
+          padding-right: 10px;
         }
       }
     }
@@ -434,7 +460,8 @@
   &__testimony {
     h2 {
       font-size: calc($heading-2 - 0.2rem);
-      color: $vivid-red-tangelo;
+      color: $venous-blood-red;
+      font-weight: 600;
     }
 
     .testimony-list {
@@ -451,12 +478,18 @@
       padding: 2rem 1.5rem;
       margin-top: 1rem;
       background-color: white;
-      box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.06);
+      box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.05);
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.08);
+        transform: scale(1.02);
+      }
 
       &__name {
         margin: 0;
         font-size: $heading-3;
-        font-weight: 700;
+        font-weight: 600;
         color: $venous-blood-red;
       }
 

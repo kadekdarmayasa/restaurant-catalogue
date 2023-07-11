@@ -90,9 +90,19 @@
       margin: auto;
       width: 90%;
     }
+  }
+}
 
+@media screen and (min-width: 760px) {
+  .restaurant-detail {
     &__menu {
-      flex-direction: column;
+      flex-direction: row;
+      align-items: start;
+
+      .food-menu,
+      .drink-menu {
+        max-width: 350px;
+      }
     }
   }
 }
