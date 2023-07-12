@@ -43,6 +43,10 @@
     }
   }
 
+  .hero__content {
+    text-align: center;
+  }
+
   .hero__headline {
     font-size: $heading-1;
   }
@@ -86,9 +90,35 @@
   }
 
   .restaurant-detail {
+    &__name {
+      font-size: calc($heading-1 - 0.2rem);
+    }
+
+    &__categories {
+      h2 {
+        font-size: calc($heading-2 - 0.2rem);
+      }
+    }
+
     &__content {
       margin: auto;
       width: 90%;
+    }
+
+    &__testimony {
+      h2 {
+        font-size: calc($heading-2 - 0.2rem);
+      }
+
+      .testimony-item {
+        &__name {
+          font-size: $heading-3;
+        }
+
+        &__review {
+          font-size: $body-1;
+        }
+      }
     }
   }
 }
@@ -181,6 +211,12 @@
 
   .breadcrumb {
     width: 100%;
+  }
+
+  .restaurant-catalogues__content {
+    .restaurant-item {
+      grid-column-end: span 3;
+    }
   }
 
   .restaurant-detail__testimony {

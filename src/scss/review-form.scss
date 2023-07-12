@@ -11,10 +11,12 @@
 
   &-title {
     margin-top: 1.5rem;
+    font-size: $heading-3;
+    font-weight: 500;
   }
 
   &-confirm {
-    background-color: $vivid-red-tangelo;
+    background-color: $honey-carrot-cake;
     font-family: inherit;
     color: $white;
     border: 0;
@@ -44,7 +46,7 @@
 
   label {
     font-size: $body-2;
-    font-weight: 500;
+    font-weight: 400;
     color: $venous-blood-red;
   }
 

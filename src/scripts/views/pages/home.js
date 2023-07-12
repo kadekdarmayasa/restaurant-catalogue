@@ -36,10 +36,6 @@ const Home = {
             </p>
           </div>
           <div class="restaurant-catalogues__content" id="restaurantCataloguesContent"></div>
-          <a href="#/restaurants" id="showMoreButton">
-            Show more
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
         </section>
       </main>
     `;
@@ -67,7 +63,7 @@ const Home = {
     restaurantCataloguesContent.innerHTML = createRestaurantItemSkeletonTemplate().repeat(6);
 
     const restaurants = await RestaurantCatalogueSource.listRestaurant();
-    restaurants.length = 6;
+    restaurants.length = 8;
     restaurantCataloguesContent.innerHTML = '';
 
     restaurants.forEach((restaurant) => {
