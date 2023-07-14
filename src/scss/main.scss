@@ -479,7 +479,8 @@
       transform: scale(1);
 
       ~ .option-button {
-        color: $vivid-red-tangelo;
+        background-color: $honey-carrot-cake;
+        color: $white;
       }
     }
   }
@@ -498,8 +499,12 @@
       cursor: pointer;
       transition: all 0.3s ease;
 
+      &.active {
+        color: $honey-carrot-cake;
+      }
+
       &:hover {
-        color: $vivid-red-tangelo;
+        color: $honey-carrot-cake;
       }
 
       i {
@@ -517,9 +522,11 @@
     color: $venous-blood-red;
     background-color: transparent;
     cursor: pointer;
+    transition: all 0.3s ease;
 
     &:hover {
-      color: $vivid-red-tangelo;
+      background-color: $honey-carrot-cake;
+      color: $white;
     }
   }
 }

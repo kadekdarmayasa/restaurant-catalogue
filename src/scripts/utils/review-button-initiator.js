@@ -10,7 +10,7 @@ const ReviewButtonInitiator = {
       const formValues = await this.showReviewForm();
       if (formValues === undefined) return;
       if (formValues.name === '' || formValues.review === '') {
-        this.showAlert({ type: 'error', message: 'Please fill all fields' });
+        this.showAlert({ type: 'error', message: 'Please fill in all fields' });
         return;
       }
 
