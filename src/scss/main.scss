@@ -413,27 +413,8 @@
       font-weight: 600;
     }
 
-    .testimony-list {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 10px 20px;
-    }
-
     .testimony-item {
-      grid-column-end: span 12;
-      height: auto;
-      width: 100%;
-      border-radius: 10px;
-      padding: 2rem 1.5rem;
-      margin-top: 1rem;
-      background-color: white;
-      box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.05);
-      transition: all 0.3s ease;
-
-      &:hover {
-        box-shadow: 0 0 25px rgba($color: #000000, $alpha: 0.08);
-        transform: scale(1.02);
-      }
+      padding: 3em 2em;
 
       &__name {
         margin: 0;

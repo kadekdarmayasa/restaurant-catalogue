@@ -67,7 +67,7 @@ const createNotFoundTemplate = () => /* html */ `
 `;
 
 const createTestimonyItemTemplate = (customer) => /* html */ `
-  <div class="testimony-item">
+  <div class="testimony-item glide__slide">
     <div class="testimony-item__header">
       <h3 class="testimony-item__name">${customer.name}</h3>
       <p class="testimony-item__date">${customer.date}</p>
@@ -138,7 +138,21 @@ const createRestaruantDetailTemplate = (restaurant) => /* html */ `
     </div>
     <div class="restaurant-detail__testimony">
       <h2>Customer Reviews</h2>
-      <div class="testimony-list" id="testimonyList">${restaurant.customerReviews}</div>
+      <div class="glide">
+        <div data-glide-el="controls" class="glide__controls">
+          <button data-glide-dir="<" class="glide__controls--prev" aria-label="Prev Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button data-glide-dir=">" class="glide__controls--next" aria-label="Next Slide">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides" id="testimonyList">
+            ${restaurant.customerReviews}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 `;

@@ -8,6 +8,7 @@ import {
 import LikeButtonPresenter from '../../presenters/like-button-presenter';
 import { NavItemInitiator, OptionButtonInitiator, ReviewButtonInitiator } from '../../utils';
 import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
+import Glide from '@glidejs/glide';
 
 const Detail = {
   async render() {
@@ -68,6 +69,18 @@ const Detail = {
       optionButton: document.getElementById('optionButton'),
       actionsButton: document.getElementById('actions'),
     });
+
+    new Glide('.glide', {
+      type: 'carousel',
+      perView: 3,
+      startAt: 0,
+      animationDuration: 500,
+      animationTimingFunc: 'ease',
+      breakpoints: {
+        768: { perView: 1 },
+        960: { perView: 2 },
+      },
+    }).mount();
 
     await LikeButtonPresenter.init({
       likeButtonContainer: document.getElementById('likeButtonContainer'),

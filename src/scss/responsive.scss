@@ -177,12 +177,6 @@
         height: 700px;
       }
     }
-
-    &__testimony {
-      .testimony-item {
-        grid-column-end: span 6;
-      }
-    }
   }
 }
 
@@ -190,12 +184,6 @@
   .restaurant-catalogues__content {
     .restaurant-item {
       grid-column-end: span 4;
-    }
-  }
-
-  .restaurant-detail__testimony {
-    .testimony-item {
-      grid-column-end: span 6;
     }
   }
 }
@@ -216,12 +204,6 @@
   .restaurant-catalogues__content {
     .restaurant-item {
       grid-column-end: span 3;
-    }
-  }
-
-  .restaurant-detail__testimony {
-    .testimony-item {
-      grid-column-end: span 4;
     }
   }
 }
