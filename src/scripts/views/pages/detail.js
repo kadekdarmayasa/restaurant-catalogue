@@ -24,19 +24,19 @@ const Detail = {
       </main>
 
       <div class="action-button-container">
+        <button class="option-button" id="optionButton" aria-label="show action options">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+
         <div class="actions" id="actions">
           <div class="action-button" id="likeButtonContainer"></div>
           <div class="action-button" id="addReviewButtonContainer">
-            <button type="button" id="addReviewButton" tabindex="-1">
+            <button type="button" id="addReviewButton">
               <i class="fa-regular fa-comment"></i>
               <span>Add Review</span>
             </button>
           </div>
         </div>
-
-        <button class="option-button" id="optionButton" aria-label="show action options">
-          <i class="fa-solid fa-ellipsis-vertical"></i>
-        </button>
       </div>
     `;
   },

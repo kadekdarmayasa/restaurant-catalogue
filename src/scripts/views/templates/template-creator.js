@@ -90,14 +90,14 @@ const createReviewFormTemplate = () => /* html */ `
 `;
 
 const creaeteLikeRestaurantButtonTemplate = () => /* html */ `
-  <button type="button" id="likeButton" tabindex="-1">
+  <button type="button" id="likeButton">
     <i class="fa fa-heart-o" aria-hidden="true"></i>
     <span class="like">Like</span>
   </button>
 `;
 
 const createUnlikeRestaurantButtonTemplate = () => /* html */ `
-  <button type="button" id="unlikeButton" class="active" tabindex="-1">
+  <button type="button" id="unlikeButton" class="active">
     <i class="fa fa-heart" aria-hidden="true"></i>
     <span class="unlike">Unlike</span>
   </button>
