@@ -1,0 +1,4 @@
+User-agent: Googlebot
+Allow: *
+
+Sitemap: https://resto-up.netlify.app/sitemap.txt

@@ -1,8 +1,8 @@
-import NavItemInitiator from '../../utils/nav-item-initiator';
-import FavoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
-import FavoriteRestaruantSearchPresenter from '../../presenters/favorite-restaurant-search-presenter';
-import FavoriteRestaruantShowPresenter from '../../presenters/favorite-restaurant-show-presenter';
-import FavoriteRestaruantSearchView from './favorite-restaurants/favorite-restaurants-search-view';
+import NavItemInitiator from "../../utils/nav-item-initiator";
+import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
+import FavoriteRestaruantSearchPresenter from "../../presenters/favorite-restaurant-search-presenter";
+import FavoriteRestaruantShowPresenter from "../../presenters/favorite-restaurant-show-presenter";
+import FavoriteRestaruantSearchView from "./favorite-restaurants/favorite-restaurants-search-view";
 
 const view = new FavoriteRestaruantSearchView();
 
@@ -23,11 +23,11 @@ const Favorites = {
   },
 
   async afterRender() {
-    document.title = 'RestoUp | Favorites';
+    document.title = "RestoUp | Favorites";
 
     NavItemInitiator.setActiveNavItem({
-      navItems: document.querySelectorAll('.app-bar__navigation a'),
-      pathName: 'favorites',
+      navItems: document.querySelectorAll(".app-bar__navigation a"),
+      pathName: "favorites",
     });
 
     new FavoriteRestaruantSearchPresenter({
